@@ -7,6 +7,11 @@ import java.util.Scanner;
  * Insertion sort is the singleton class which performs the insertion sort on the array which is
  * present as a parameter inside the class
  * 
+ * Best case running time is O(n) when the elements are already sorted, the inner loop doesn't get executed
+ * Proof - CLRS page 
+ * 
+ * Worst case running time is O(n^2) 
+ * 
  * @author aarish-1867
  *
  */
