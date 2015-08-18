@@ -36,6 +36,12 @@ import java.util.Scanner;
  * 
  * Euclidean algorithm always needs less than O(h) divisions, where h is the number of digits in the smaller number b
  * 
+ * PseudoCode:
+ * -----------
+ * It is a recursive problem. 
+ * Catch: In problematic sense, find the smallest square tile which is being left out after successive square tiles 
+ * And its dimension will be the GCD
+ * 
  * @author AARISH
  */
 public class EuclidGcdAlgorithm {

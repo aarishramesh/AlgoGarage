@@ -9,7 +9,7 @@ package sorting;
  * 
  * Worst case running time is O(n^2) 
  * 
- * @author aarish-1867
+ * @author AARISH
  *
  */
 public class InsertionSorter extends Sorter {

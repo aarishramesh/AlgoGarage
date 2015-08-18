@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Abstract sorter which sorts the given list of elements
  * This sorter has to be extended for concrete implementation
  * 
- * @author aarish-1867
+ * @author AARISH
  *
  */
 public abstract class Sorter {
