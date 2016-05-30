@@ -10,5 +10,6 @@ public class PiNumberLimiter {
         double flooredPi = Math.floor(Math.PI * Math.pow(10, num));
         double reqVal = flooredPi / Math.pow(10, num);
         System.out.println("Truncated value is::" + reqVal);
+        sc.close();
     }
 }
