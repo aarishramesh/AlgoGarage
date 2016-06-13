@@ -41,7 +41,7 @@ public class StringOperator {
 			}
 		}
 		if (charIndex == input.length) {
-			System.out.println("No extra spaces in the string to accomodate space characters!!");
+			System.out.println("No extra spaces in the string to accommodate space characters!!");
 			return;
 		}
 		int i = charIndex; int j = input.length - 1;
