@@ -1,4 +1,4 @@
-package interviewquestions;
+package arraysstrings;
 
 /**
  * Problem : Minimum time required to finish tasks such that two consecutive tasks cannot be skipped

@@ -1,4 +1,4 @@
-package interviewquestions;
+package arraysstrings;
 
 /**
  * Check for character duplication in a string using bit- vector 

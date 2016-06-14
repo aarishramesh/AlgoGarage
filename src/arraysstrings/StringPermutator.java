@@ -1,4 +1,4 @@
-package interviewquestions;
+package arraysstrings;
 
 /**
  * Class containing all operations relating to permutations in a string

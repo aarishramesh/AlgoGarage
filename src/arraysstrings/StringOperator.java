@@ -1,4 +1,4 @@
-package interviewquestions;
+package arraysstrings;
 
 public class StringOperator {
 	public static void main(String[] args) {
