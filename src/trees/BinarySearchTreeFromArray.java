@@ -5,6 +5,8 @@ public class BinarySearchTreeFromArray {
         int[] arr = {1, 3, 5, 7, 12, 21, 32, 33, 76, 89, 91};
         boolean elementFound = false;
         int minIndex = 0, temp = 0;
+        
+        //Sorting logic - inefficient with O (N ^ 2) running time
         for(int i = 0; i < arr.length; i++) {
             minIndex = i;
             for(int j = i + 1; j < arr.length; j++) {

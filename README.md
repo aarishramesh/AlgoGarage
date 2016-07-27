@@ -1,4 +1,4 @@
-# AlgorithmicProblems
+# AlgoGarage
 
 This project is basically developed to serve as a one-hub place for solutions to all coding problems involving the concepts of Data structures and Algorithms.
 
