@@ -1,5 +1,11 @@
 package trees;
 
+/**
+ * Construct BST with minimal height from sorted array
+ * 
+ * @author aarish-1867
+ *
+ */
 // Need to improvise and get it better in further iterations
 // Running time - 2 * O (logN) ~ O (logN)
 public class ConstBstFromSortedArr {
