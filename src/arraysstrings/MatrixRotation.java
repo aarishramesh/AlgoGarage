@@ -54,6 +54,7 @@ public class MatrixRotation {
                 System.out.print("\n");
             }
         }
+        System.out.println("Elements print has ended!! So cool");
     }
 
     static void rotateMatrixBy90(int[][] matrix) {
