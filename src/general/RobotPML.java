@@ -1,8 +1,14 @@
 package general;
 
+import java.util.Scanner;
+
 public class RobotPML {
 	public static void main(String args[]) throws Exception {
-		System.out.println(compute("PMMMMMMMMMMMMMMMMMMMLPLPLPLPLPLPLPLPLPLPL"));
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		if (input != null && !input.isEmpty()) {
+			System.out.println(input);
+		}
 	}
 
 	static String compute(String instructions) {
@@ -30,6 +36,7 @@ public class RobotPML {
 		for (int i = 0; i < intOut.length; i++) {
 			sb.append(getChar(intOut[i]));
 		}
+		int i = 0;
 		return sb.toString();
 
 	}

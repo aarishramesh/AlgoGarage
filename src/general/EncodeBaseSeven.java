@@ -7,7 +7,7 @@ public class EncodeBaseSeven {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
-		System.out.println(convertToBase2(num));
+		System.out.println(convertToBase7(num));
 	}
 
 	private static String convertToBase7(int num) {
@@ -17,20 +17,6 @@ public class EncodeBaseSeven {
 			Character charVal = getEncodedChar(rem);
 			resultStack.push(charVal);
 			num = num / 7;
-		}
-		StringBuilder result = new StringBuilder();
-		while(!resultStack.isEmpty())
-			result.append(resultStack.pop());
-		return result.toString();
-	}
-
-	private static String convertToBase2(int num) {
-		Stack<Character> resultStack = new Stack<Character>();
-		while (num > 0) {
-			int rem = num % 2;
-			Character charVal = getEncodedChar(rem);
-			resultStack.push(charVal);
-			num = num / 2;
 		}
 		StringBuilder result = new StringBuilder();
 		while(!resultStack.isEmpty())
@@ -52,7 +38,7 @@ public class EncodeBaseSeven {
 			case 5:
 				return 'i';
 			case 6:
-				return 'N';
+				return 'n';
 			default:
 				return '0';	
 		}
