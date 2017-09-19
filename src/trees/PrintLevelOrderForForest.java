@@ -45,22 +45,28 @@ public class PrintLevelOrderForForest {
 			new HashMap<Integer, StringBuilder>();
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int N = s.nextInt();
+		Scanner s = null;
+		try {
+			s = new Scanner(System.in);
+			int N = s.nextInt();
 
-		for (int j = 0; j < N; j++) {
-			int num = s.nextInt();
-			int[] arr = new int[num];
-			for (int i = 0; i < arr.length; i++) {
-				arr[i] = s.nextInt();
+			for (int j = 0; j < N; j++) {
+				int num = s.nextInt();
+				int[] arr = new int[num];
+				for (int i = 0; i < arr.length; i++) {
+					arr[i] = s.nextInt();
+				}
+				Node root = new Node(-1);
+				nodesReverseMapForForest.put(-1, root);
+				constructForestFromParents(arr);
+				addNodeToLevel(root, 0);
+				printNodesLevelWise();
+				nodesReverseMapForForest.clear();
+				levelNodesList.clear();
 			}
-			Node root = new Node(-1);
-			nodesReverseMapForForest.put(-1, root);
-			constructForestFromParents(arr);
-			addNodeToLevel(root, 0);
-			printNodesLevelWise();
-			nodesReverseMapForForest.clear();
-			levelNodesList.clear();
+		} finally {
+			if (s != null)
+				s.close();
 		}
 	}
 
