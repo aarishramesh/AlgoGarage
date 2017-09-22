@@ -1,6 +1,7 @@
 package arraysstrings;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -28,7 +29,7 @@ public class RemoveDuplicatesInArray {
 		}
 	}
 
-	private static void removeDuplicates(LinkedList<Integer> list) {
+	public static <T> void removeDuplicates(List<? extends T> list) {
 		if (list.size() == 0 || list.size() == 1) {
 			return;
 		}
