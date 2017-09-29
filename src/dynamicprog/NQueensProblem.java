@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Determine a possible configuration on an N * N board
+ * Determine a possible configuration of N queens on an N * N board or print 
+ *  ' N queens cannot be fitted on the board '
  * 
  * @author aarishramesh
  *
