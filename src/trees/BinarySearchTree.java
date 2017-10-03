@@ -1,12 +1,12 @@
 package trees;
 
 public class BinarySearchTree {
-	Node root;
+	private BinaryTreeNode root;
 
-	public Node insert(Node n, int element) {
+	public BinaryTreeNode insert(BinaryTreeNode n, int element) {
 		if(n == null) {
-			return new Node(element);
-		} else if(element < n.element){
+			return new BinaryTreeNode(element);
+		} else if(element <= n.element){
 			n.left = insert(n.left, element);
 		} else if(element > n.element) {
 			n.right = insert(n.right, element);
@@ -14,7 +14,7 @@ public class BinarySearchTree {
 		return n;
 	}
 
-	public boolean search(Node n, int num) {
+	public boolean search(BinaryTreeNode n, int num) {
 		if(n!= null) {
 			if (n.element == num) {
 				return true;
@@ -27,7 +27,7 @@ public class BinarySearchTree {
 		return false;
 	}
 
-	public void print(Node n) {
+	public void print(BinaryTreeNode n) {
 		if(n != null) {
 			System.out.println(n.element);
 			print(n.left);
@@ -35,11 +35,11 @@ public class BinarySearchTree {
 		}
 	}
 
-	public Node getRoot() {
+	public BinaryTreeNode getRoot() {
 		return root;
 	}
 
-	public void setRoot(Node root) {
+	public void setRoot(BinaryTreeNode root) {
 		this.root = root;
 	}
 
@@ -53,12 +53,12 @@ public class BinarySearchTree {
 	}
 }
 
-class Node {
+class BinaryTreeNode {
 	int element;
-	Node left;
-	Node right;
+	BinaryTreeNode left;
+	BinaryTreeNode right;
 
-	Node(int element) {
+	BinaryTreeNode(int element) {
 		this.element = element;
 	}
 }
