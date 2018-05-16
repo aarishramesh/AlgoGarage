@@ -89,7 +89,7 @@ public class MaxAreaOfHistogramOptimised {
 		MaxAreaOfHistogramOptimised mh = new MaxAreaOfHistogramOptimised();
 		int input[] = {2,2,2,6,1,5,4,2,2,2,2};
 		int maxArea = mh.maxHistogram(input);
-		//System.out.println(maxArea);
-		assert maxArea == 12;
+		System.out.println(maxArea);
+		assert maxArea == 11;
 	}
 }
