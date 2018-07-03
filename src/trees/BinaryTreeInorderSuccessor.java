@@ -1,8 +1,16 @@
 package trees;
 
+/**
+ * 
+ * 
+ * @author polymath
+ *
+ */
 public class BinaryTreeInorderSuccessor {
 		
 	private static Node3 prev;
+	
+	private static Node3 next;
 	
 	public static void main(String[] args) {
 		Node3 node = new Node3(10);
@@ -14,8 +22,11 @@ public class BinaryTreeInorderSuccessor {
 		node1.left = node3;
 		node1.right = node4;
 		
-		inorderSuccessor(node);
-		printInorderSuccessor(node);
+		//inorderSuccessor(node);
+		//printInorderSuccessor(node);
+		
+		reverseInorderSuccessor(node);
+		printReverseInorderSuccessor(node);
 	}
 	
 	static void inorderSuccessor(Node3 node) {
@@ -30,6 +41,16 @@ public class BinaryTreeInorderSuccessor {
 		inorderSuccessor(node.right);
 	}
 	
+	static void reverseInorderSuccessor(Node3 node) {
+		if (node == null)
+			return;
+		reverseInorderSuccessor(node.right);
+		if (next != null)
+			next.left = node;
+		next = node;
+		reverseInorderSuccessor(node.left);
+	}
+	
 	static void printInorderSuccessor(Node3 node) {
 		Node3 startingNode = node;
 		while (startingNode.left != null)
@@ -37,6 +58,16 @@ public class BinaryTreeInorderSuccessor {
 		do {
 			System.out.print(startingNode.data + " ");
 			startingNode = startingNode.right;
+		} while (startingNode != null);
+	}
+	
+	static void printReverseInorderSuccessor(Node3 node) {
+		Node3 startingNode = node;
+		while (startingNode.right != null)
+			startingNode = startingNode.right;
+		do {
+			System.out.print(startingNode.data + " ");
+			startingNode = startingNode.left;
 		} while (startingNode != null);
 	}
 }
