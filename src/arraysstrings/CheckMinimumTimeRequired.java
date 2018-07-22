@@ -17,13 +17,11 @@ public class CheckMinimumTimeRequired {
         int inc = testArr[0];
         int exc = 0;
         int incNew = 0; 
-        int excNew = 0;
         for (int i = 1; i < testArr.length; i++) {
             incNew = testArr[i] + Math.min(inc, exc);
-            excNew = inc;
+            exc = inc;
 
             inc = incNew;
-            exc = excNew;       
         }
         System.out.println("Minimum time meeting the condition :: " + Math.min(inc, exc));
     }

@@ -77,7 +77,7 @@ public class StringOperator {
 
 	static void compressString(char[] input) {
 		char newChar = input[0];
-		int currCharCount = 1; int j = 0;
+		int currCharCount = 1;
 		StringBuffer buff = new StringBuffer();
 		for (int i = 0; i < input.length; i++) {
 			if (i +1 < input.length && input[i+1] == newChar) {

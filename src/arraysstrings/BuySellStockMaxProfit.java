@@ -16,6 +16,7 @@ public class BuySellStockMaxProfit {
 	public static void main(String[] args) {
 		int[] arr = {6,4,1,3,5,7,3,1,3,4,7,9,2,5,6,0,1,2};
 		System.out.println(maxProfitInfiTnxs(arr));
+		System.out.println(oneTimeMaxProfit(arr));
 	}
 	
 	private static int oneTimeMaxProfit(int[] arr) {
