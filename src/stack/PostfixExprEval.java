@@ -17,6 +17,11 @@ import java.util.Stack;
 public class PostfixExprEval {
 	public static void main(String[] args) {
 		String[] exprArr = {"9", "20", "20", "/", "*"};
+		
+	}
+
+	public static float evaluate(String expr) {
+		String[] exprArr = expr.split(" ");
 		Stack<String> operStack = new Stack<String>();
 		for (String val : exprArr) {			
 			if (isFloat(val)) {
@@ -27,9 +32,9 @@ public class PostfixExprEval {
 				operStack.add((eval(num1, num2, val.charAt(0))) + "");
 			}
 		}
-		System.out.println(operStack.get(0));
+		return Float.parseFloat(operStack.get(0));
 	}
-
+	
 	private static float eval(float num1, float num2, char operator) {
 		if (operator == '+')
 			return num1 + num2;
