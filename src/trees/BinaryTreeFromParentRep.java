@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
 
- * Given an array reprsentation of binary tree where index is data while value at index is
+ * Given an array representation of binary tree where index is data while value at index is
  * parent create the binary tree. Value of -1 indicates root Node8.
  * 
  * References:
