@@ -30,6 +30,28 @@ public class MorrisTraversal {
 		}
 	}
 	
+	public static void preOrderTraversal(Node root) {
+		while (root != null) {
+			if (root.left == null) {
+				System.out.print(root.data + " ");
+				root = root.right;
+			} else {
+				Node pre = root.left;
+				while (pre.right != null && !pre.right.equals(root)) {
+					pre = pre.right;
+				}
+				if (pre.right.equals(root)) {
+					pre.right = null;
+					root = root.right;
+				} else {
+					System.out.print(root.data + " ");
+					pre.right = root;
+					root = root.left;
+				}
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		Node root = new Node(1);
 		Node left = new Node(2);
