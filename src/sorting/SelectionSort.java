@@ -37,6 +37,7 @@ public class SelectionSort {
 		for(i = 0; i < n; i++) {
 			System.out.println(arrList[i]);
 		}
+		inp.close();
 	}
 	
 	static void swap(int fromPos, int toPos) {
