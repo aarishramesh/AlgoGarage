@@ -7,29 +7,29 @@ package trees;
  *
  */
 public class BinaryTreeInorderSuccessor {
-		
-	private static Node3 prev;
-	
-	private static Node3 next;
-	
+
+	private static Node prev;
+
+	private static Node next;
+
 	public static void main(String[] args) {
-		Node3 node = new Node3(10);
-		Node3 node1 = new Node3(12);
-		Node3 Node3 = new Node3(15);
-		node.left = node1; node.right = Node3;
-		Node3 node3 = new Node3(25);
-		Node3 node4 = new Node3(30);
+		Node node = new Node(10);
+		Node node1 = new Node(12);
+		Node Node = new Node(15);
+		node.left = node1; node.right = Node;
+		Node node3 = new Node(25);
+		Node node4 = new Node(30);
 		node1.left = node3;
 		node1.right = node4;
-		
+
 		//inorderSuccessor(node);
 		//printInorderSuccessor(node);
-		
+
 		reverseInorderSuccessor(node);
 		printReverseInorderSuccessor(node);
 	}
-	
-	static void inorderSuccessor(Node3 node) {
+
+	static void inorderSuccessor(Node node) {
 		if (node == null) {
 			return;
 		}
@@ -40,8 +40,8 @@ public class BinaryTreeInorderSuccessor {
 		prev = node;
 		inorderSuccessor(node.right);
 	}
-	
-	static void reverseInorderSuccessor(Node3 node) {
+
+	static void reverseInorderSuccessor(Node node) {
 		if (node == null)
 			return;
 		reverseInorderSuccessor(node.right);
@@ -50,9 +50,9 @@ public class BinaryTreeInorderSuccessor {
 		next = node;
 		reverseInorderSuccessor(node.left);
 	}
-	
-	static void printInorderSuccessor(Node3 node) {
-		Node3 startingNode = node;
+
+	static void printInorderSuccessor(Node node) {
+		Node startingNode = node;
 		while (startingNode.left != null)
 			startingNode = startingNode.left;
 		do {
@@ -60,9 +60,9 @@ public class BinaryTreeInorderSuccessor {
 			startingNode = startingNode.right;
 		} while (startingNode != null);
 	}
-	
-	static void printReverseInorderSuccessor(Node3 node) {
-		Node3 startingNode = node;
+
+	static void printReverseInorderSuccessor(Node node) {
+		Node startingNode = node;
 		while (startingNode.right != null)
 			startingNode = startingNode.right;
 		do {
@@ -70,14 +70,15 @@ public class BinaryTreeInorderSuccessor {
 			startingNode = startingNode.left;
 		} while (startingNode != null);
 	}
-}
 
-class Node3 {
-	int data;
-	Node3 left;
-	Node3 right;
-	
-	Node3(int data) {
-		this.data = data;
+
+	static class Node {
+		int data;
+		Node left;
+		Node right;
+
+		Node(int data) {
+			this.data = data;
+		}
 	}
 }

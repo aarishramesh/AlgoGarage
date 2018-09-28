@@ -14,20 +14,20 @@ public class BinaryTreeMaxPathSum {
 	static int maxSum = 0;
 
 	public static void main(String[] args) {
-		Node15 root = new Node15(10);
-		Node15 leftChild = new Node15(9);
-		Node15 rightChild = new Node15(20);
+		Node root = new Node(10);
+		Node leftChild = new Node(9);
+		Node rightChild = new Node(20);
 		root.left = leftChild;
 		root.right = rightChild;
-		rightChild.left = new Node15(15);
-		rightChild.right = new Node15(7);
-		
+		rightChild.left = new Node(15);
+		rightChild.right = new Node(7);
+
 		maxPathSum(root);
-		
+
 		System.out.println(maxSum);
 	}
 
-	static int maxPathSum(Node15 root) {
+	static int maxPathSum(Node root) {
 		if (root == null)
 			return 0;
 		int leftMax = maxPathSum(root.left);
@@ -36,14 +36,15 @@ public class BinaryTreeMaxPathSum {
 		maxSum = Math.max(maxSum, Math.max(maxSingle, root.data + leftMax + rightMax));
 		return maxSingle;
 	}
-}
 
-class Node15 {
-	int data;
-	Node15 left;
-	Node15 right;
 
-	Node15(int data) {
-		this.data = data;
+	static class Node {
+		int data;
+		Node left;
+		Node right;
+
+		Node(int data) {
+			this.data = data;
+		}
 	}
 }

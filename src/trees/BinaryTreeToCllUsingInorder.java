@@ -2,12 +2,12 @@ package trees;
 
 public class BinaryTreeToCllUsingInorder {
 
-	static Node17 prev;
-	static Node17 head;
+	static Node prev;
+	static Node head;
 
 	static boolean headFound;
 
-	static void binaryTreeToCll(Node17 root) {
+	static void binaryTreeToCll(Node root) {
 		if (root == null) {
 			return;
 		}
@@ -25,13 +25,13 @@ public class BinaryTreeToCllUsingInorder {
 	}
 
 	public static void main(String[] args) {
-		Node17 root = new Node17(4);
-		Node17 left = new Node17(2);
-		Node17 right = new Node17(5);
+		Node root = new Node(4);
+		Node left = new Node(2);
+		Node right = new Node(5);
 		root.left = left;
 		root.right = right;
-		left.left = new Node17(1);
-		left.right = new Node17(3);
+		left.left = new Node(1);
+		left.right = new Node(3);
 
 		binaryTreeToCll(root);
 
@@ -42,7 +42,7 @@ public class BinaryTreeToCllUsingInorder {
 	}
 
 	private static void printTreeAsDll() {
-		Node17 node = head;
+		Node node = head;
 		if (node != null) {
 			do {
 				System.out.println(node.left.data + " " + node.data + " " + node.right.data);
@@ -50,48 +50,48 @@ public class BinaryTreeToCllUsingInorder {
 			} while (!node.equals(head));
 		}
 	}
-}
 
-class Node17 {
-	int data;
-	Node17 left;
-	Node17 right;
+	static class Node {
+		int data;
+		Node left;
+		Node right;
 
-	Node17(int data) {
-		this.data = data;
-	}
+		Node(int data) {
+			this.data = data;
+		}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + data;
-		result = prime * result + ((left == null) ? 0 : left.hashCode());
-		result = prime * result + ((right == null) ? 0 : right.hashCode());
-		return result;
-	}
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + data;
+			result = prime * result + ((left == null) ? 0 : left.hashCode());
+			result = prime * result + ((right == null) ? 0 : right.hashCode());
+			return result;
+		}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Node other = (Node) obj;
+			if (data != other.data)
+				return false;
+			if (left == null) {
+				if (other.left != null)
+					return false;
+			} else if (!left.equals(other.left))
+				return false;
+			if (right == null) {
+				if (other.right != null)
+					return false;
+			} else if (!right.equals(other.right))
+				return false;
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Node17 other = (Node17) obj;
-		if (data != other.data)
-			return false;
-		if (left == null) {
-			if (other.left != null)
-				return false;
-		} else if (!left.equals(other.left))
-			return false;
-		if (right == null) {
-			if (other.right != null)
-				return false;
-		} else if (!right.equals(other.right))
-			return false;
-		return true;
+		}
 	}
 }

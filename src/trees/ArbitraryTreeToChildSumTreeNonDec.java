@@ -12,29 +12,29 @@ package trees;
  */
 public class ArbitraryTreeToChildSumTreeNonDec {
 	public static void main(String[] args) {
-		Node7 node = new Node7(32);
-		Node7 node1 = new Node7(13);
-		Node7 node2 = new Node7(15);
+		Node node = new Node(32);
+		Node node1 = new Node(13);
+		Node node2 = new Node(15);
 		node.left = node1; node.right = node2;
-		Node7 node3 = new Node7(3);
-		Node7 node4 = new Node7(10);
+		Node node3 = new Node(3);
+		Node node4 = new Node(10);
 		node1.left = node3;
 		node1.right = node4;
-		
+
 		convertBinaryTreeToChildSumNonDec(node);
-		
+
 		printPostOrderBinaryTree(node);
 	}
-	
-	private static void printPostOrderBinaryTree(Node7 node) {
+
+	private static void printPostOrderBinaryTree(Node node) {
 		if (node == null)
 			return;
 		printPostOrderBinaryTree(node.left);
 		printPostOrderBinaryTree(node.right);
 		System.out.print(node.data + " ");
 	}
-	
-	private static void convertBinaryTreeToChildSumNonDec(Node7 node) {
+
+	private static void convertBinaryTreeToChildSumNonDec(Node node) {
 		if (node == null || (node.left == null && node.right == null))
 			return;
 		convertBinaryTreeToChildSumNonDec(node.left);
@@ -53,15 +53,14 @@ public class ArbitraryTreeToChildSumTreeNonDec {
 			}
 		}
 	}
-}
 
+	static class Node {
+		int data;
+		Node left;
+		Node right;
 
-class Node7 {
-	int data;
-	Node7 left;
-	Node7 right;
-	
-	Node7(int data) {
-		this.data = data;
+		Node(int data) {
+			this.data = data;
+		}
 	}
 }

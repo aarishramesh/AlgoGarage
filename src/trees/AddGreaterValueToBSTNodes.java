@@ -4,24 +4,24 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class AddGreaterValueToBSTNodes {
-	private static Node4 next;
-	
+	private static Node next;
+
 	public static void main(String[] args) {
-		Node4 node = new Node4(10);
-		Node4 node1 = new Node4(8);
-		Node4 node2 = new Node4(15);
+		Node node = new Node(10);
+		Node node1 = new Node(8);
+		Node node2 = new Node(15);
 		node.left = node1; node.right = node2;
-		Node4 node3 = new Node4(4);
-		Node4 node4 = new Node4(9);
+		Node node3 = new Node(4);
+		Node node4 = new Node(9);
 		node1.left = node3;
 		node1.right = node4;
-		
+
 		addGreaterValueEveryNode(node);
-		
+
 		printTreeNodes(node);
 	}
-	
-	private static void addGreaterValueEveryNode(Node4 node) {
+
+	private static void addGreaterValueEveryNode(Node node) {
 		if (node == null)
 			return;
 		addGreaterValueEveryNode(node.right);
@@ -30,12 +30,12 @@ public class AddGreaterValueToBSTNodes {
 		next = node;
 		addGreaterValueEveryNode(node.left);
 	}
-	
-	private static void printTreeNodes(Node4 node) {
-		Queue<Node4> queue = new LinkedList<Node4>();
+
+	private static void printTreeNodes(Node node) {
+		Queue<Node> queue = new LinkedList<Node>();
 		queue.add(node);
 		while (!queue.isEmpty()) {
-			Node4 tempNode = queue.remove();
+			Node tempNode = queue.remove();
 			System.out.print(tempNode.data + " ");
 			if (tempNode.left != null)
 				queue.add(tempNode.left);
@@ -43,14 +43,15 @@ public class AddGreaterValueToBSTNodes {
 				queue.add(tempNode.right);
 		}
 	}
-}
 
-class Node4 {
-	int data;
-	Node4 left;
-	Node4 right;
-	
-	Node4(int data) {
-		this.data = data;
+
+	static class Node {
+		int data;
+		Node left;
+		Node right;
+
+		Node(int data) {
+			this.data = data;
+		}
 	}
 }
