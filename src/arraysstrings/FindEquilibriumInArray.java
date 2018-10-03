@@ -1,5 +1,13 @@
 package arraysstrings;
 
+/**
+ * Test cases 
+ * 
+ * Empty array, length 1, 2 
+ * 
+ * @author polymath
+ *
+ */
 public class FindEquilibriumInArray {
 	public static int findEquilibriumInArray(int[] arr) {
 		if (arr != null) {
@@ -15,17 +23,13 @@ public class FindEquilibriumInArray {
 						if (leftIndex == rightIndex) {
 							return leftIndex;
 						} else {
-							left += arr[leftIndex];
-							right += arr[rightIndex];
-							leftIndex++;
-							rightIndex--;
+							left += arr[leftIndex++];
+							right += arr[rightIndex++];
 						}
 					} else if (left > right) {
-						right += arr[rightIndex];
-						rightIndex--;
+						right += arr[rightIndex--];
 					} else {
-						left += arr[leftIndex];
-						leftIndex++;
+						left += arr[leftIndex++];
 					}
 				}
 			}

@@ -2,6 +2,14 @@ package arraysstrings;
 
 import java.util.Arrays;
 
+/**
+ * An algorith  similar to finding equillibrium index
+ * 
+ * Run time - O(N^2)
+ * 
+ * @author polymath
+ *
+ */
 public class ThreeNumbersClosestSum {
 
 	public int threeSumClosest(int[] arr, int target) {

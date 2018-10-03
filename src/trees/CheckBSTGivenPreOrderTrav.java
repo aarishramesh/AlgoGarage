@@ -17,7 +17,7 @@ public class CheckBSTGivenPreOrderTrav {
 	}
 	
 	static boolean checkBst(int[] preOrderArr) {
-		int min = 0, max = Integer.MAX_VALUE, prev = preOrderArr[0];
+		int min = Integer.MIN_VALUE, max = Integer.MAX_VALUE, prev = preOrderArr[0];
 		for (int i = 1; i < preOrderArr.length; i++) {
 			if (preOrderArr[i] > min && preOrderArr[i] < max) {
 				if (preOrderArr[i] < prev) {

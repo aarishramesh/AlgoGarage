@@ -16,10 +16,9 @@ import java.util.Map;
  */
 public class CountUniquePairs {
 	public static void main(String[] args) {
-		int[] arr = {1, 5, 7, -1, 5};
+		int[] arr = {1, 5, 5};
 		System.out.println(countSumPairs(arr, 6));
 		System.out.println(countDiffPairs(arr, 4));
-		System.out.println(countDiffPaisWithSorting(arr, 5, 4));
 	}
 	
 	private static int countSumPairs(int[] arr, int sum) {
@@ -49,32 +48,6 @@ public class CountUniquePairs {
 				twiceCount--;
 		}
 		return twiceCount / 2;
-	}
-	
-	/* Returns count of pairs with
-	difference k in arr[] of size n. */
-	static int countDiffPaisWithSorting(int arr[], int n,
-	                                          int k)
-	{
-	    int count = 0;
-	    Arrays.sort(arr); // Sort array elements
-	 
-	    int l = 0;
-	    int r = 0;
-	    while(r < n)
-	    {
-	        if(arr[r] - arr[l] == k)
-	        {
-	            count++;
-	            l++;
-	            r++;
-	        }
-	        else if(arr[r] - arr[l] > k)
-	            l++;
-	        else // arr[r] - arr[l] < sum
-	            r++;
-	    } 
-	    return count;
 	}
 
 }
