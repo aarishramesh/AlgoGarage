@@ -8,7 +8,6 @@ package dynamicprog;
  * Space complexity: O(1)
  * Time complexity: O(N)
  * 
- * @author aarish-1867
  *
  */
 public class CheckMinimumTimeRequired {
