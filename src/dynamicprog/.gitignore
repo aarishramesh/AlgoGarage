@@ -40,3 +40,6 @@
 /SubSetProblem.class
 /CoinChangingNumberOfWays.class
 /CuttingRodMaximiseProfit.class
+/WeightedJobScheduling.class
+/WeightedJobScheduling$Job.class
+/WeightedJobScheduling$JobComparator.class
