@@ -1,5 +1,12 @@
 package dynamicprog;
 
+/**
+ * http://www.geeksforgeeks.org/how-to-print-maximum-number-of-a-using-given-four-keys/
+ * Test cases
+ * Negative number
+ * Number less than 7
+ * Number greater than equal to 7
+ */
 public class CountNoOfAs {
 	static int max = 0;
 
@@ -8,6 +15,17 @@ public class CountNoOfAs {
 		System.out.println(max);
 	}
 	
+	/**
+	 * Top down recursive approach
+	 * 
+	 * @param command
+	 * @param screen
+	 * @param memBuff
+	 * @param screenBuff
+	 * @param count
+	 * @param keys
+	 * @return
+	 */
 	public static int noOfAs(String command, String screen, String memBuff, String screenBuff, int count, int keys) {
 		if (keys <= 0) {
 			if (count > max)
