@@ -7,17 +7,14 @@ package dynamicprog;
  */
 public class RegexExpressionDP {
 	public static void main(String[] args) {
-		System.out.println(regexMatchingDp("xaabyc", ".*"));
+		System.out.println(regexMatchingDp("baaaaaabaaaabaaaaababababbaab", "..a*aa*a.aba*a*bab*"));
 	}
 
-	public static boolean regexMatchingDp(String text, String regex) {
+	public static int regexMatchingDp(String text, String regex) {
 		boolean[][] regexMatch = new boolean[text.length() + 1][regex.length() + 1];
 		
 		regexMatch[0][0] = true;
-		
-		for (int i = 1; i < text.length() + 1; i++)
-			regexMatch[i][0] = false;
-		
+
 		// Does regex match empty string ?
 		boolean emptyRegexMatch = true;
 		if (regex.equals(".*")) {
@@ -48,12 +45,10 @@ public class RegexExpressionDP {
 								regex.charAt(j - 2) == '.') {
 							regexMatch[i][j] = regexMatch[i][j] | regexMatch[i - 1][j];
 						}
-					} else {
-						regexMatch[i][j] = false;
 					}
 				}
 			}
 		}
-		return regexMatch[text.length()][regex.length()];
+		return regexMatch[text.length()][regex.length()] ? 1 : 0;
 	}
 }
