@@ -15,7 +15,7 @@ package dynamicprog;
 public class LongestPalindromicSequence {
 	
 	public static void main(String[] args) {
-		System.out.println("\n"+ lps("agbdba".toCharArray()));
+		System.out.println("\n"+ lps("aaaabaaa".toCharArray()));
 	}
 	
 	public static int lps(char[] arr) {
@@ -66,7 +66,7 @@ public class LongestPalindromicSequence {
 			} else if (result[i][j] == result[i][j - 1]) {
 				j--;
 			} else if (result[i][j] == result[i + 1][j - 1] + 2) {
-				System.out.print(arr[i] + " " + arr[j] + " ");
+				System.out.print(arr[i] + " " + arr[j]);
 				i++; j--;
 			}
 		}
