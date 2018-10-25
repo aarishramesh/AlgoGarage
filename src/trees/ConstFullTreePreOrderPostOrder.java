@@ -39,6 +39,7 @@ public class ConstFullTreePreOrderPostOrder {
 		return node;
 	}
 	
+	// Needs to be optimised by creating a hashmap
 	static int findIndexInPostArr(int[] postArr, int element, int start, int end) {
 		for (int i = start; i <= end; i++) {
 			if (postArr[i] == element)

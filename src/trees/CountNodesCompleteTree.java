@@ -17,7 +17,7 @@ public class CountNodesCompleteTree {
 		int rh = rightHeight(root.right);
 		int rlh = rightHeight(root.left);
 		if (lh == rh) {
-			// If left height and right heights are equals then tree is complete and full so return the height 2 ^h - 1
+			// If left height and right heights are equal then tree is complete and full so return the height 2 ^h - 1
 			return (1 << lh + 1) - 1;
 		} else {
 			if (lh == rlh) {

@@ -8,7 +8,7 @@ package trees;
  *  
  *  - Inorder is a sorted array => print all elements on left sub tree -> root -> print all elements on right sub tree
  * 
- * - In Posrrorder the sequence is like => print all elements on left sub tree -> print all elements on right sub tree -> root 
+ * - In Postrorder the sequence is like => print all elements on left sub tree -> print all elements on right sub tree -> root 
  * 
  * @author polymath
  *
