@@ -9,8 +9,7 @@ import java.util.Scanner;
  * 
  * Space complexity - In place so no additional space is required
  * 
- * @author aarish-1867
- *
+ *  
  */
 public class MatrixRotation {
 

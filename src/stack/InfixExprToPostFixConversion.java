@@ -12,7 +12,7 @@ import java.util.Stack;
  */
 public class InfixExprToPostFixConversion {
 	public static void main(String[] args) {
-		String expr = "A * B * C";
+		String expr = "A + B * C";
 		char[] exprChar = expr.toCharArray();
 		Stack<Character> opsStack = new Stack<Character>();
 		List<Character> postFixExprList = new ArrayList<Character>();

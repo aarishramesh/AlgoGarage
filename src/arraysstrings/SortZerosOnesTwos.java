@@ -17,7 +17,7 @@ package arraysstrings;
  */
 public class SortZerosOnesTwos {
 	public static void main(String[] args) {
-		int[] arr = {1, 0, 2, 0, 1, 2, 0, 0};
+		int[] arr = {1, 0, 2, 0, 1, 2, 0, 2};
 		int low = 0, mid = low, high = arr.length - 1;
 		while (mid <= high) {
 			switch (arr[mid]) {
