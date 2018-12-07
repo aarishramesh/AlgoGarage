@@ -19,7 +19,7 @@ public class SegmentTreeForRangeMin {
 		for (int i = 0; i < n; i++)
 			elementsArr[i] = sc.nextInt();
 		
-		int segmentArrSize = NextPowOfTwo.findNextPowOfTwoUsingBitManip(n) * 2 - 1;
+		int segmentArrSize = NextPowOfTwo.findNextPowOfTwoUsingLogCeiling(n) * 2 - 1;
 
 		int[] rangeQueryArr = new int[segmentArrSize];
 		

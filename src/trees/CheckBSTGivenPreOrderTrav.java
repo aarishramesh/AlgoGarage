@@ -5,6 +5,8 @@ package trees;
  * 
  * Run time - O(N)
  * 
+ * Prerequisite - Each internal node of the tree has exactly one child
+ * 
  * Important condition to note is in pre-order traversal children nodes come after the parent
  * Solution same as that of checking BST
  * 

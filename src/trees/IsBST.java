@@ -7,14 +7,14 @@ package trees;
  *
  */
 public class IsBST {
-	boolean checkBST(Node25 root) {
+	boolean checkBST(Node root) {
 		if (root == null) {
 			return true;
 		}
 		return BSTHelperUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
 
-	boolean BSTHelperUtil(Node25 node, int min, int max) {
+	boolean BSTHelperUtil(Node node, int min, int max) {
 		if (node == null) {
 			return true;
 		}
@@ -24,13 +24,14 @@ public class IsBST {
 			return false;
 		}
 	}
-}
 
 
-class Node25 {
-	int data;
-	Node25 left;
-	Node25 right;
+
+	static class Node {
+		int data;
+		Node left;
+		Node right;
+	}
 }
 
 

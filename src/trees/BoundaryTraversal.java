@@ -13,21 +13,21 @@ package trees;
 public class BoundaryTraversal {
 
 	public static void main(String[] args) {
-		Node20 root = new Node20(20);
-		Node20 leftChild = new Node20(8);
-		Node20 rightChild = new Node20(22);
+		Node root = new Node(20);
+		Node leftChild = new Node(8);
+		Node rightChild = new Node(22);
 		root.left = leftChild;
 		root.right = rightChild;
-		rightChild.right = new Node20(25);
-		leftChild.left = new Node20(4);
-		leftChild.right = new Node20(12);
-		leftChild.right.left = new Node20(10);
-		leftChild.right.right = new Node20(14);
+		rightChild.right = new Node(25);
+		leftChild.left = new Node(4);
+		leftChild.right = new Node(12);
+		leftChild.right.left = new Node(10);
+		leftChild.right.right = new Node(14);
 		
 		boundaryTraversal(root);
 	}
 
-	static void boundaryTraversal(Node20 root) {
+	static void boundaryTraversal(Node root) {
 		if (root != null) {
 			System.out.println(root.data);
 			printLeftBoundary(root.left);
@@ -37,7 +37,7 @@ public class BoundaryTraversal {
 		}
 	}
 
-	private static void printLeftBoundary(Node20 root) {
+	private static void printLeftBoundary(Node root) {
 		if (root == null)
 			return;
 		if (root.left != null) {
@@ -50,7 +50,7 @@ public class BoundaryTraversal {
 		// Not printing leaf nodes to avoid duplicates
 	}
 
-	private static void printRightBoundary(Node20 root) {
+	private static void printRightBoundary(Node root) {
 		if (root == null)
 			return;
 		if (root.right != null) {
@@ -63,7 +63,7 @@ public class BoundaryTraversal {
 		// Not printing leaf nodes to avoid duplicates
 	}
 
-	private static void printLeaves(Node20 root) {
+	private static void printLeaves(Node root) {
 		if (root == null)
 			return;
 		if (root.left == null && root.right == null) {
@@ -73,14 +73,13 @@ public class BoundaryTraversal {
 		printLeaves(root.left);
 		printLeaves(root.right);
 	}
-}
-
-class Node20 {
-	int data;
-	Node20 left;
-	Node20 right;
-
-	Node20(int data) {
-		this.data = data;
+	
+	static class Node {
+		Node left, right;
+		int data;
+		
+		Node(int data) {
+			this.data = data;
+		}
 	}
 }

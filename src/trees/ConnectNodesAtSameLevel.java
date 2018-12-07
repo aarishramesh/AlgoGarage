@@ -4,9 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Using level order traversal and null markers in the 
+ * Using level order traversal and adding null markers in the queue to separate different levels
  * 
  * https://www.geeksforgeeks.org/connect-nodes-level-level-order-traversal/
+ * 
  * https://ide.geeksforgeeks.org/gV1Oc2 - Alternate approach
  * 
  * @author polymath
@@ -15,12 +16,12 @@ import java.util.Queue;
 public class ConnectNodesAtSameLevel {
 
 	public static void main(String[] args) {
-		Node23 node = new Node23(15);
-		Node23 node1 = new Node23(13);
-		Node23 node2 = new Node23(20);
+		Node node = new Node(15);
+		Node node1 = new Node(13);
+		Node node2 = new Node(20);
 		node.left = node1; node.right = node2;
-		Node23 node3 = new Node23(4);
-		Node23 node4 = new Node23(14);
+		Node node3 = new Node(4);
+		Node node4 = new Node(14);
 		node1.left = node3;
 		node1.right = node4;
 		
@@ -28,12 +29,12 @@ public class ConnectNodesAtSameLevel {
 
 	}
 	
-	public static void connectNodes(Node23 root) {
-		Queue<Node23> nodes = new LinkedList<Node23>();
+	public static void connectNodes(Node root) {
+		Queue<Node> nodes = new LinkedList<Node>();
 		nodes.add(root);
 		nodes.add(null);
 		while (!nodes.isEmpty()) {
-			Node23 node = nodes.remove();
+			Node node = nodes.remove();
 			if (node != null) {
 				node.nextRight = nodes.peek();
 				if (node.left != null)
@@ -46,13 +47,13 @@ public class ConnectNodesAtSameLevel {
 		}
 	}
 	
-	static class Node23 {
+	static class Node {
 		int data;
-		Node23 left;
-		Node23 right;
-		Node23 nextRight;
+		Node left;
+		Node right;
+		Node nextRight;
 		
-		Node23(int data) {
+		Node(int data) {
 			this.data = data;
 		}
 	}

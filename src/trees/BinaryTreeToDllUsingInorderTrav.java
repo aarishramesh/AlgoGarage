@@ -2,16 +2,16 @@ package trees;
 
 public class BinaryTreeToDllUsingInorderTrav {
 
-	static Node2 prev;
-	static Node2 head;
+	static Node prev;
+	static Node head;
 
 	public static void main(String[] args) {
-		Node2 node = new Node2(10);
-		Node2 node1 = new Node2(12);
-		Node2 node2 = new Node2(15);
+		Node node = new Node(10);
+		Node node1 = new Node(12);
+		Node node2 = new Node(15);
 		node.left = node1; node.right = node2;
-		Node2 node3 = new Node2(25);
-		Node2 node4 = new Node2(30);
+		Node node3 = new Node(25);
+		Node node4 = new Node(30);
 		node1.left = node3;
 		node1.right = node4;
 		
@@ -19,7 +19,7 @@ public class BinaryTreeToDllUsingInorderTrav {
 		printBtreeToDll(head);
 	}
 	
-	static void inorderTrav(Node2 root) {
+	static void inorderTrav(Node root) {
 		if (root == null)
 			return;
 		inorderTrav(root.left);
@@ -33,10 +33,19 @@ public class BinaryTreeToDllUsingInorderTrav {
 		inorderTrav(root.right);
 	}
 	
-	private static void printBtreeToDll(Node2 node) {
+	private static void printBtreeToDll(Node node) {
 		while (node != null) {
 			System.out.print(node.data + " ");
 			node = node.right;
+		}
+	}
+	
+	static class Node {
+		Node left, right;
+		int data;
+		
+		Node(int data) {
+			this.data = data;
 		}
 	}
 }

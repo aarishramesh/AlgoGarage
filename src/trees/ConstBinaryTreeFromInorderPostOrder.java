@@ -1,5 +1,11 @@
 package trees;
 
+/**
+ * https://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
+ * 
+ * @author polymath
+ *
+ */
 public class ConstBinaryTreeFromInorderPostOrder {
 	
 	static int postIndex;
@@ -19,13 +25,14 @@ public class ConstBinaryTreeFromInorderPostOrder {
 			return null;
 		}
 		
-		Node newNode = new Node(inOrder[postIndex]);
+		int inOrderIndex = findIndexInInOrder(postOrder[postIndex], inOrder);
+
+		Node newNode = new Node(postOrder[postIndex]);
 		postIndex--;
 		
 		if (left == right) {
 			return newNode;
 		}
-		int inOrderIndex = findIndexInInOrder(postOrder[postIndex], inOrder);
 
 		newNode.right = constBinaryTree(inOrder, postOrder, inOrderIndex + 1, right);
 		newNode.left = constBinaryTree(inOrder, postOrder, left, inOrderIndex - 1);

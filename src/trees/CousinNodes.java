@@ -4,7 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * http://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/ Assumption
+ * Cousing nodes are nodes which lie on the same level of tree but with different parent
+ * 
+ * http://www.geeksforgeeks.org/check-two-nodes-cousins-binary-tree/ 
+ * 
+ * Assumption
+ * 
  * that both a and b are unique in tree. Test cases: Empty tree Tree with only
  * root Tree and input with a and b as cousin node Tree and input with a and b
  * not cousin node Tree with input a and b being siblings(not cousin)
@@ -115,40 +120,6 @@ public class CousinNodes {
 		Node left;
 		Node right;
 		
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + data;
-			result = prime * result + ((left == null) ? 0 : left.hashCode());
-			result = prime * result + ((right == null) ? 0 : right.hashCode());
-			return result;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Node other = (Node) obj;
-			if (data != other.data)
-				return false;
-			if (left == null) {
-				if (other.left != null)
-					return false;
-			} else if (!left.equals(other.left))
-				return false;
-			if (right == null) {
-				if (other.right != null)
-					return false;
-			} else if (!right.equals(other.right))
-				return false;
-			return true;
-		}
-
 		Node (int data) {
 			this.data = data;
 		}

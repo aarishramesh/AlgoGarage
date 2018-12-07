@@ -8,6 +8,14 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Nearest common ancestor using parent pointer
+ * 
+ * Grab interview question solution
+ * 
+ * @author polymath
+ *
+ */
 public class NearestCommonAncestor {
 	private static Map<Integer, CustomNode> nodesReverseMapForForest 
 		= new HashMap<Integer, CustomNode>();

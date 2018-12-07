@@ -44,7 +44,8 @@ public class ConstructAllBSTFromInorderTraversal {
 
     public static void main(String args[]) {
         ConstructAllBSTFromInorderTraversal ct = new ConstructAllBSTFromInorderTraversal();
-        List<Node> allTrees = ct.generateTrees(2);
+        @SuppressWarnings("unused")
+		List<Node> allTrees = ct.generateTrees(2);
     }
     
     static class Node {

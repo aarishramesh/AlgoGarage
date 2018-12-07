@@ -6,32 +6,37 @@ import java.util.Queue;
 /**
  * Check if children property holds i.e Root element is the sum of the left and right sum values
  * 
+ * Using level order traversal
+ * 
+ * This is just to check whether children sum property holds and is different from arbitrary tree to children sum tree
+ *  in a non-decreasing manner
+ * 
  * @author polymath
  *
  */
 public class ChildrenSumPropertyInBinaryTree {
 
 	public static void main(String[] args) {
-		Node5 node = new Node5(28);
-		Node5 node1 = new Node5(13);
-		Node5 node2 = new Node5(15);
+		Node node = new Node(28);
+		Node node1 = new Node(13);
+		Node node2 = new Node(15);
 		node.left = node1; node.right = node2;
-		Node5 node3 = new Node5(4);
-		Node5 node4 = new Node5(9);
+		Node node3 = new Node(4);
+		Node node4 = new Node(9);
 		node1.left = node3;
 		node1.right = node4;
-		
+
 		System.out.println(IsCheckSumPropertyHolds(node));
 	}
 
-	private static boolean IsCheckSumPropertyHolds(Node5 node) {
-		Queue<Node5> queue = new LinkedList<Node5>();
+	private static boolean IsCheckSumPropertyHolds(Node node) {
+		Queue<Node> queue = new LinkedList<Node>();
 		queue.add(node);
 		boolean checkSumHolds = true;
 		while (!queue.isEmpty()) {
-			Node5 currNode = queue.remove();
-			Node5 leftNode = currNode.left;
-			Node5 rightNode = currNode.right;
+			Node currNode = queue.remove();
+			Node leftNode = currNode.left;
+			Node rightNode = currNode.right;
 			if (leftNode != null || rightNode != null) {
 				int leftVal = leftNode != null ? leftNode.data : 0;
 				int rightVal = rightNode != null ? rightNode.data : 0;
@@ -48,14 +53,15 @@ public class ChildrenSumPropertyInBinaryTree {
 		}
 		return checkSumHolds;
 	}
-}
 
-class Node5 {
-	int data;
-	Node5 left;
-	Node5 right;
-	
-	Node5(int data) {
-		this.data = data;
+
+	static class Node {
+		int data;
+		Node left;
+		Node right;
+
+		Node(int data) {
+			this.data = data;
+		}
 	}
 }

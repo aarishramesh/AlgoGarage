@@ -1,4 +1,4 @@
-package trees;
+package binarysearch;
 
 public class SearchElementInSortedArray {
 	public static void main(String[] args) {
