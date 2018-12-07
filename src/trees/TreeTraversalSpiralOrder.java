@@ -33,14 +33,6 @@ public class TreeTraversalSpiralOrder {
 		treeTraversalSpiralOrderUsingDequeue(root);
 	}
 
-	private static int heightOfBinaryTree(Node root) {
-		if (root == null)
-			return 0;
-		int leftHeight = heightOfBinaryTree(root.left);
-		int rightHeight = heightOfBinaryTree(root.right);
-		return 1 + Math.max(leftHeight, rightHeight);
-	}
-
 	/**
 	 * O(N^2) solution. Not so cool
 	 * 
