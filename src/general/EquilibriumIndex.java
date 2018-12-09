@@ -2,6 +2,12 @@ package general;
 
 import java.util.Scanner;
 
+/**
+ * https://www.geeksforgeeks.org/equilibrium-index-of-an-array/
+ * 
+ * @author polymath
+ *
+ */
 public class EquilibriumIndex {
 	
 	static boolean solve(int[] a) {
@@ -21,18 +27,6 @@ public class EquilibriumIndex {
 		return false;
 	}
 
-	static int findMinInRotatedSortedArr(int[] arr, int start, int end) {
-		int mid = (start + end) / 2;
-		if (arr[mid] >= arr[start] && arr[mid] <= arr[end]) {
-			return mid;
-		} else if (arr[mid] >= arr[start] && arr[mid] >= arr[end]) {
-			return findMinInRotatedSortedArr(arr, mid + 1, end);
-		} else if (arr[mid] <= arr[start] && arr[mid] <= arr[end]) {
-			return findMinInRotatedSortedArr(arr, start, mid -1);
-		}
-		return -1;
-	}
-	
 	public static void main(String[] args) {
 		Scanner in = null;
 		try {

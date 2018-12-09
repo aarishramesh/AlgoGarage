@@ -16,7 +16,7 @@ import java.util.Stack;
  */
 public class PostfixExprEval {
 	public static void main(String[] args) {
-		String[] exprArr = {"9", "20", "20", "/", "*"};
+		//String[] exprArr = {"9", "20", "20", "/", "*"};
 		
 	}
 

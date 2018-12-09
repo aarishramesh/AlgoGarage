@@ -5,14 +5,13 @@ import java.util.List;
 
 public class SearchForARange {
 	
-	static int start = -1, end = -1;
 	static boolean elementFound = false;
 	
 	public static void main(String[] args) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
-		arr.add(4); arr.add(7); arr.add(7); arr.add(8); arr.add(10); arr.add(10);
+		arr.add(7); arr.add(7); arr.add(8); arr.add(10); arr.add(10);
 		ArrayList<Integer> result = searchRange(arr, 7);
-		System.out.println("[" + start + "," + end + "]");
+		System.out.println("[" + result.get(0) + "," + result.get(1) + "]");
 	}
 	
 	public static ArrayList<Integer> searchRange(final List<Integer> a, int b) {

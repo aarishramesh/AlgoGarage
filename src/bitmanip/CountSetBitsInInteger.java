@@ -45,7 +45,7 @@ public class CountSetBitsInInteger {
 	 * Space time complexity - 2^k
 	 */
 	/* Recursively get nibble of a given number  
-and map them in the array  */
+	and map them in the array  */
 	//int num_to_bits[16] =  {0, 1, 1, 2, 1, 2, 2, 3,   
 	//		1, 2, 2, 3, 2, 3, 3, 4}; 
 	//	unsigned int countSetBitsRec(unsigned int num) 

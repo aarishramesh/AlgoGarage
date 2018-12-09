@@ -1,5 +1,6 @@
 package arraysstrings;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,38 +16,44 @@ import java.util.Map;
  */
 public class CountUniquePairs {
 	public static void main(String[] args) {
-		int[] arr = {1, 5, 5};
-		System.out.println(countSumPairs(arr, 6));
-		System.out.println(countDiffPairs(arr, 4));
+		int[] arr = {1, 2, 2, 3, 4, 5};
+		System.out.println(countDiffPairsUsingHashing(arr, 1));
+		System.out.println(countDiffPairsUsingSorting(arr, 1));
 	}
 	
-	private static int countSumPairs(int[] arr, int sum) {
-		Map<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
-		for (int i = 0; i < arr.length; i++) {
-			freqMap.merge(arr[i], 1, Integer::sum);
-		}
-		int twiceCount = 0;
-		for (int i = 0; i < arr.length; i++) {
-			if (freqMap.get(sum - arr[i]) != null)
-				twiceCount += freqMap.get(sum - arr[i]);
-			if (sum - arr[i] == arr[i])
-				twiceCount--;
-		}
-		return twiceCount / 2;
-	}
-	
-	private static int countDiffPairs(int[] arr, int diff) {
+	private static int countDiffPairsUsingHashing(int[] arr, int diff) {
 		Map<Integer, Integer> freqMap = new HashMap<Integer, Integer>();
 		for (int i = 0; i < arr.length; i++)
 			freqMap.merge(arr[i], 1, Integer:: sum);
-		int twiceCount = 0;
+		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
-			if (freqMap.get(diff + arr[i]) != null)
-				twiceCount += freqMap.get(diff + arr[i]);
-			if (diff + arr[i] == arr[i])
-				twiceCount--;
+			if (freqMap.get(diff + arr[i]) != null && freqMap.get(diff + arr[i]) != 0) {
+				count++;
+				freqMap.put(diff + arr[i], freqMap.get(diff + arr[i]) - 1);
+				freqMap.put(arr[i], freqMap.get(arr[i] - 1));
+			}
+			if (arr[i] - diff > 0 && freqMap.get(arr[i] - diff) != null && freqMap.get(arr[i] - diff) != 0) {
+				count++;
+				freqMap.put(arr[i] - diff, freqMap.get(arr[i] - diff) - 1);
+				freqMap.put(arr[i], freqMap.get(arr[i] - 1));
+			}
 		}
-		return twiceCount / 2;
+		return count;
 	}
 
+	private static int countDiffPairsUsingSorting(int[] arr, int diff) {
+		Arrays.sort(arr);
+		int l = 0, r = 0, count = 0;
+		while (r < arr.length) {
+			if (arr[r] - arr[l] == diff) {
+				l++; r++;
+				count++;
+			} else if (arr[r] - arr[l] < diff) {
+				r++;
+			} else {
+				l++;
+			}
+		}
+		return count;
+	}
 }

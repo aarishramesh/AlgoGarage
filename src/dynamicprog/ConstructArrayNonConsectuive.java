@@ -1,7 +1,5 @@
 package dynamicprog;
 
-import java.util.Scanner;
-
 /**
  * 
  * Solution video tutorial - https://www.youtube.com/watch?v=_nLeiMMSd4E&feature=youtu.be
