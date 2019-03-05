@@ -22,7 +22,7 @@ public class UniquePermutations {
 			for (int i = index; i < arr.length; i++) {
 				swap(arr, index, i);
 				sb.append(arr[index]);
-				uniquePermut(arr, index + 1, new StringBuilder(sb.toString()));
+				uniquePermut(arr, index + 1, sb);
 				sb.deleteCharAt(sb.length() - 1);
 				swap(arr, i, index);
 			}
