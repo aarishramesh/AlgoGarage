@@ -17,10 +17,12 @@ public class CheckBinaryTreeSumTree {
 		root.left = left; root.right = right;
 		left.left = new Node(4); left.right = new Node(6);
 		right.right = new Node(3);
-		
-		System.out.println(checkBtSumTree(root, new Value(0)));
+
+		Value val = new Value(0);
+		System.out.println(checkBtSumTreeNew(root, val));
+
 	}
-	
+
 	public static boolean checkBtSumTree(Node node, Value h) {
 		if (node == null)
 			return true;
@@ -36,19 +38,35 @@ public class CheckBinaryTreeSumTree {
 		}
 		return false;
 	}
-	
+
+	public static boolean checkBtSumTreeNew(Node node, Value h) {
+		if (node == null)
+			return true;
+		boolean isLeftSumTree = checkBtSumTree(node.left, h);
+		int lh = h.val;
+		boolean isRightSumTree = checkBtSumTree(node.right, h);
+		int rh = h.val;
+		if (isLeftSumTree && isRightSumTree) {
+			if ((node.left == null && node.right == null ) || node.data == lh + rh) {
+				h.val = lh + rh + node.data;
+				return true;
+			}
+		}
+		return false;
+	}
+
 	static class Node {
 		int data;
 		Node left, right;
-		
+
 		Node (int data) {
 			this.data = data;
 		}
 	}
-	
+
 	static class Value {
 		int val;
-		
+
 		Value(int val) {
 			this.val = val;
 		}
