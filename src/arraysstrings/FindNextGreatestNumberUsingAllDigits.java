@@ -1,9 +1,15 @@
 package arraysstrings;
 
+/**
+ * https://www.geeksforgeeks.org/find-next-greater-number-set-digits/
+ * 
+ * @author polymath
+ *
+ */
 public class FindNextGreatestNumberUsingAllDigits {
 	
 	public static void main(String[] args) {
-		int[] arr = {4, 3, 2, 1};
+		int[] arr = {5, 6, 7, 1, 4, 5, 3, 2 ,0};
 		int[] result = findNextGreatestNumber(arr);
 		for (int i = 0; i < result.length; i++) {
 			System.out.print(result[i]);
@@ -15,8 +21,9 @@ public class FindNextGreatestNumberUsingAllDigits {
 			for (int i = arr.length - 1; i > 0; i--) {
 				if (arr[i - 1] < arr[i]) {
 					int temp = arr[i - 1];
-					arr[i - 1] = arr[i];
-					int k = arrCpy.length - 1; boolean elementPlaced = false;
+					arr[i - 1] = arr[arr.length - 1];
+					int k = arrCpy.length - 2; boolean elementPlaced = false;
+					int largest = arr[i];
 					while (i < arr.length) {
 						if (!elementPlaced) {
 							if (arrCpy[k] < temp) {
@@ -35,6 +42,7 @@ public class FindNextGreatestNumberUsingAllDigits {
 					if (!elementPlaced) {
 						arr[i - 1] = temp;
 					}
+					arr[arr.length - 1] = largest;
 					break;
 				}
 			}
