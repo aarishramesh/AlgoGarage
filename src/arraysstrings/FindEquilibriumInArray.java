@@ -24,7 +24,7 @@ public class FindEquilibriumInArray {
 							return leftIndex;
 						} else {
 							left += arr[leftIndex++];
-							right += arr[rightIndex++];
+							right += arr[rightIndex--];
 						}
 					} else if (left > right) {
 						right += arr[rightIndex--];
