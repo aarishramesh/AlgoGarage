@@ -27,11 +27,9 @@ public class BinaryTreeToMirrorTree {
 	public static Node convertToMirrorTree(Node node) {
 		if (node  == null)
 			return null;
-		node.left = convertToMirrorTree(node.left);
-		node.right = convertToMirrorTree(node.right);
 		Node temp = node.left;
-		node.left = node.right;
-		node.right = temp;
+		node.left = convertToMirrorTree(node.right);
+		node.right = convertToMirrorTree(temp);
 		return node;
 	}
 	
