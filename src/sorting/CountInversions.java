@@ -1,4 +1,3 @@
-package sorting;
 
 /**
  * https://www.geeksforgeeks.org/counting-inversions/
