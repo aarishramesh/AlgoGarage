@@ -1,8 +1,9 @@
-package arraysstrings;
-
+package dynamicprog;
 
 /**
- * 
+ * Date 07/29/2015
+ * @author Tushar Roy
+ *
  * Given a string find longest palindromic substring in this string.
  *
  * References
@@ -11,9 +12,8 @@ package arraysstrings;
  * http://articles.leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
  * http://www.akalin.cx/longest-palindrome-linear-time
  * http://tarokuriyama.com/projects/palindrome2.php
- * https://github.com/mission-peace/interview/blob/master/src/com/interview/string/LongestPalindromeSubstring.java
  */
-public class LongestPalindromicSubstring {
+public class LongestPalindromicSubString {
 
     public int longestPalindromeSubstringEasy(char arr[]) {
 
@@ -88,7 +88,7 @@ public class LongestPalindromicSubstring {
             if(end == T.length -1) {
                 break;
             }
-            //Mark newCenter to be either end or end + 1 depending on if we are dealing with even or odd number input.
+            //Mark newCenter to be either end or end + 1 depending on if we dealing with even or old number input.
             int newCenter = end + (i%2 ==0 ? 1 : 0);
 
             for(int j = i + 1; j <= end; j++) {
@@ -159,8 +159,8 @@ public class LongestPalindromicSubstring {
     }
 
     public static void main(String args[]) {
-        LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-        System.out.println(lps.longestPalindromeDynamic("abba".toCharArray()));
+        LongestPalindromicSubString lps = new LongestPalindromicSubString();
+        System.out.println(lps.longestPalindromicSubstringLinear("abba".toCharArray()));
         System.out.println(lps.longestPalindromicSubstringLinear("abbababba".toCharArray()));
         System.out.println(lps.longestPalindromicSubstringLinear("babcbaabcbaccba".toCharArray()));
         System.out.println(lps.longestPalindromicSubstringLinear("cdbabcbabdab".toCharArray()));
